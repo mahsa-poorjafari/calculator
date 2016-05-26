@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            '/home/mahsa/work/DFKI_hiwi/Baumbach_hiwi/calculator/cal/templates',
+            os.path.join(BASE_DIR, 'cal/templates/cal')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
