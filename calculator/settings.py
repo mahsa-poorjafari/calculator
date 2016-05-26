@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cal',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -52,10 +53,13 @@ MIDDLEWARE_CLASSES = [
 
 ROOT_URLCONF = 'calculator.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            '/home/mahsa/work/DFKI_hiwi/Baumbach_hiwi/calculator/cal/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

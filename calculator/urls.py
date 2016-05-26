@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import url
-from . import views
+import cal.views
+from django.conf.urls import patterns, include, url
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
+    url(r'^$', cal.views.index),
+    url(r'^cal/', cal.views.index),
 ]
 
