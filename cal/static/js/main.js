@@ -12,13 +12,15 @@ $(document).ready(function() {
         $('.formulla').val($('.valueof').html());
         $('.formulla').attr('value',$('.valueof').html());
     });
+
     $(".equal_to").click(function(e) {
         e.preventDefault();
         var result = eval($('.formulla').val());
         $( "#log" ).html( result );
 
     });
-    /*
+
+
     //For getting CSRF token
     function getCookie(name) {
               var cookieValue = null;
@@ -35,7 +37,7 @@ $(document).ready(function() {
           }
         return cookieValue;
     }
-
+    /*
     //When submit is clicked
     $(".e").click(function(e) {
 
@@ -49,10 +51,8 @@ $(document).ready(function() {
         //Collect data from fields
         var formulla = $('.formulla').val();
 
-        $.post("/ajax_test/", function(data) {
-            alert(data);
-        });
-        var request = $.ajax({
+
+        var request = $.getScript({
             type: "POST",
             url: "cal/views.py",  // or just url: "/my-url/path/"
             method: "POST",
@@ -69,11 +69,12 @@ $(document).ready(function() {
              error: function(xhr, textStatus, errorThrown) {
              alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);
              }
-
+            
         });
 
 
 
     });
-     */
+    */
+
 });
