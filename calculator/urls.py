@@ -19,9 +19,16 @@ from django.conf.urls import url
 import cal.views
 from django.conf.urls import patterns, include, url
 
+
+
+
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', cal.views.index),
     url(r'^cal/', cal.views.index),
+
+
 ]
 

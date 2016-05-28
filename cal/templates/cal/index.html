@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 style ="color:blue">Calculator</h1>
-<form  method="POST" action=".">{% csrf_token %}
+    <h1 style ="color:blue">Calculator</h1>
+    <form  method="POST" action=".">{% csrf_token %}
+        <p>
+            <div class="valueof box" ></div>
+            <div id="log" class="box" style="border: red solid 1px;"></div>
+            <input type="hidden" name="formulla"  class="formulla" value=" "/>
+
+            <b/>
+
+        </p>
+        <br/>
+
     <p>
-        <div class="valueof " ></div>
-        <input type="hidden" name=""  class="" value=" "/>
-        <input type="text" name="result" class="result" value=" " />
-        <b/>
+        <input type="button" class="number btn" name="1" value="1">
+        <input type="button" class="number btn" name="2" value="2">
+        <input type="button" class="number btn" name="3" value="3" />
+        <input type="button"  name="add" value="+" class="operator btn"/>
+    </p>
+    <p>
+        <input type="button" name="4" class="number btn" value="4">
+        <input type="button" name="5" class="number btn" value="5">
+        <input type="button" name="6" class="number btn" value="6" />
+        <input type="button" name="minus" value="-" class="operator btn"/>
+    </p>
+    <p>
+        <input type="button" name="7" class="number btn" value="7">
+        <input type="button" name="8" class="number btn" value="8">
+        <input type="button" name="9" class="number btn" value="9" />
+        <input type="button" name="multi" value="*" class="operator btn"/>
+    </p>
+    <p>
+        <input type="button" name="0" class="number btn" value="0" />
+        <input type="button" name="clear" value="  Clear   " class="clear btn-info" />
+        <input type="button" name="div" value="/" class="operator btn" />
+        <input type="submit" name="equal" value="   =   " class="equal_to btn-success"/>
 
     </p>
-    <br/>
 
-<p>
-    <input type="button" class="number btn" name="1" value="1">
-    <input type="button" class="number btn" name="2" value="2">
-    <input type="button" class="number btn" name="3" value="3" />
-    <input type="button"  name="add" value="+" class="operator btn"/>
-</p>
-<p>
-    <input type="button" name="4" class="number btn" value="4">
-    <input type="button" name="5" class="number btn" value="5">
-    <input type="button" name="6" class="number btn" value="6" />
-    <input type="button" name="minus" value="-" class="operator btn"/>
-</p>
-<p>
-    <input type="button" name="7" class="number btn" value="7">
-    <input type="button" name="8" class="number btn" value="8">
-    <input type="button" name="9" class="number btn" value="9" />
-    <input type="button" name="multi" value="*" class="operator btn"/>
-</p>
-<p>
-    <input type="button" name="0" class="number btn" value="0" />
-    <input type="button" name="clear" value="  Clear   " class="clear btn-info" />
-    <input type="button" name="div" value="/" class="operator btn" />
-    <input type="submit" name="equal" value="   =   " class="equal_to btn-success"/>
-
-</p>
-
-</form>
+    </form>
 
 {% endblock %}

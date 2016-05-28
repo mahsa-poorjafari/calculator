@@ -5,20 +5,12 @@ $(document).ready(function() {
     $('.clear').click(function () {
         $(':input[type="text"]').val('');
         $('.valueof').html('');
-        $('#log').html('');
     });
     $('.number, .operator').click(function () {
         $('.valueof').append(this.value);
         $('.formulla').val($('.valueof').html());
         $('.formulla').attr('value',$('.valueof').html());
     });
-    $(".equal_to").click(function(e) {
-        e.preventDefault();
-        var result = eval($('.formulla').val());
-        $( "#log" ).html( result );
-
-    });
-    /*
     //For getting CSRF token
     function getCookie(name) {
               var cookieValue = null;
@@ -35,10 +27,9 @@ $(document).ready(function() {
           }
         return cookieValue;
     }
-
     //When submit is clicked
-    $(".e").click(function(e) {
-
+    $(".equal_to").click(function(e) {
+    
         //Prevent default submit. Must for Ajax post.Beginner's pit.
          e.preventDefault();
 
@@ -49,31 +40,43 @@ $(document).ready(function() {
         //Collect data from fields
         var formulla = $('.formulla').val();
 
-        $.post("/ajax_test/", function(data) {
-            alert(data);
-        });
-        var request = $.ajax({
+        $.ajax({
             type: "POST",
-            url: "cal/views.py",  // or just url: "/my-url/path/"
-            method: "POST",
+            url: window.location.href,  // or just url: "/my-url/path/"
             data: {
                 csrfmiddlewaretoken: csrftoken,
+                a : 1,
 
             },
-            dataType: "html"
-            /*
-             success: function(data) {
-             console.log(data);
-             alert("Congratulations! You scored: "+ data.user_id);
-             },
-             error: function(xhr, textStatus, errorThrown) {
-             alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);
-             }
-
+            success: function(data) {
+                console.log(data);
+                alert("Congratulations! You scored: "+ data);
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                alert("Please report this error: "+errorThrown+xhr.status+xhr.responseText);
+            }
         });
 
-
+        /*
+         //Send data
+        $.ajax({
+            url : window.location.href, // the endpoint,commonly same url
+            type : "POST", // http method
+            data : { csrfmiddlewaretoken : csrftoken,
+                formulla : 11,
+                }, // data sent with the post request
+            // handle a successful response
+            success : function(json) {
+                 console.log(json); // another sanity check
+                // On success show the data posted to server as a message
+                alert('here the Formulla   '+json['formulla'] +'!.');
+            },
+                 // handle a non-successful response
+            error : function(xhr,errmsg,err) {
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            }
+        });
+        */
 
     });
-     */
 });
